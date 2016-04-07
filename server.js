@@ -1,10 +1,13 @@
 var express = require('express')
 var app = express()
+var cors = require('cors')
 var unirest = require('unirest')
 
 require('dotenv').config()
 
 app.set('port', (process.env.PORT || 5000))
+
+app.use(cors())
 
 app.get('/:city_code', function(request, response) {
 
